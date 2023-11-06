@@ -1,0 +1,24 @@
+// Cores
+
+// Cor de fundo principal que vai ficar no background de todas as páginas
+$background: radial-gradient(229.04% 41.4% at 84.38% 81.35%, rgba(0, 44, 54, 0.20) 2.81%, rgba(0, 209, 255, 0.20) 100%), radial-gradient(81.19% 41.59% at 40.87% 0%, #10E8CE 0%, #08847D 0%, #002C36 100%);
+
+html {
+    height: 100%;
+    background: $background; // Use $background como a cor de fundo principal
+    background-size: cover; // Cobrir toda a área visível da tela
+}
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+        sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+        monospace;
+}
