@@ -1,5 +1,9 @@
 # Como deve ser feita a construção do projeto?
 
+Cada um vai criar uma Fork e trabalhar em cima da sua própria Fork. Quando terminar de fazer sua página/demanda, você deve fazer um pull request para colocar as alterações da sua Fork na Main do projeto.
+
+## Divisão
+
 Vai ser tudo dividido por pastar específicas para manter a organização do projeto. As páginas devem ser feitas na pasta `Pages`, os componentes reutilizados devem ser feitos na pasta `Components` e os arquivos como imagens ou svg dentro da pasta `Assets`.
 
 ## Components
