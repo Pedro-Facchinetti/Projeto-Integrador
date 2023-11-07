@@ -1,25 +1,11 @@
-import React, { useState } from "react";
-import style from './Anamnese.module.scss'
-import InputComponent from "../../Components/Input";
+import React from "react";
+import styles from './Anamnese.module.scss'
 
 function Anamnese(props) {
-    const [inputValue, setInputValue] = useState(''); // Importe 'useState' no início do arquivo
-
-    const handleInputChange = (value) => {
-      setInputValue(value);
-    };
-
     return (
-        <div className={style.main}>
-            <div className={style.container}>
-                <div className={style.container_content}>
-                    <InputComponent
-                        label="Exemplo de Input"
-                        maxLength={50}
-                        required={true}
-                        onChange={handleInputChange}
-                    />
-                    <p>Valor do Input: {inputValue}</p>
+        <div className={styles.main}>
+            <div className={styles.container}>
+                <div className={styles.container_content}>
                 </div>
             </div>
         </div>
