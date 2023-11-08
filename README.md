@@ -21,5 +21,3 @@ As páginas devem ser criadas dentro da pasta `Pages` e exportadas para o index.
 
 Pra iniciar o projeto, use o comando: npm start
 -> A plicação estará na porta [http://localhost:3000] no navegador.
-
----
