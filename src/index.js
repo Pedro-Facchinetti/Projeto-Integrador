@@ -13,16 +13,13 @@ import pacienteA from './Pages/fichaPacientes/pacienteA'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-<<<<<<< HEAD
     <Anamnese/>
     <ButtonToTop/>
   </React.StrictMode>
 );
-=======
     <ChakraProvider>
     {pacienteA()}
     </ChakraProvider>
   </React.StrictMode>,
 )
 
->>>>>>> f23b5795f928e9f8dbbc2d441c4f3852d944d845
