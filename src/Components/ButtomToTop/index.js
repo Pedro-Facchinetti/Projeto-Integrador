@@ -1,5 +1,3 @@
-//Botão que move a tela para o topo da página
-
 import React, { useState, useEffect } from 'react';
 import styles from './Button.module.scss';
 

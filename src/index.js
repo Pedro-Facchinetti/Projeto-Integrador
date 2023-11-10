@@ -1,11 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './css/global.scss';
+
+import Anamnese from './Pages/Anamnese';
+import ButtonToTop from './Components/ButtomToTop';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <div>Hello word</div>
-    {/** Coloque a referência da página aqui */}
+    <Anamnese/>
+    <ButtonToTop/>
   </React.StrictMode>
 );
