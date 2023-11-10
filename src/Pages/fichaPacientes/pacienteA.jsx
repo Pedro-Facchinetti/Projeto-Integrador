@@ -30,7 +30,7 @@ import{
     CheckboxGroup,
   }from "@chakra-ui/react";
   
-  function App() {
+  function pacienteA(props) {
     
     return (
     <Box h = "100vh"> 
@@ -233,5 +233,5 @@ import{
     )
   }
   
-  export default App
+  export default pacienteA
   
