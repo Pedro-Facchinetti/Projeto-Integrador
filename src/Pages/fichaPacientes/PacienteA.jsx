@@ -31,7 +31,6 @@ import {
 } from "@chakra-ui/react";
 
 function pacienteA(props) {
-
     return (
         <Box h="100vh">
             <Center
