@@ -6,28 +6,11 @@ import {
     Input,
     FormLabel,
     HStack,
-    RadioGroup,
-    Radio,
     Button,
     Tab,
     Tabs,
-    TabPanel,
-    TabPanels,
     TabList,
-    Table,
-    Thead,
-    Tbody,
-    Tfoot,
-    Tr,
-    Th,
-    Td,
-    TableCaption,
-    TableContainer,
-    Select,
-    Portal,
-    VStack,
     Checkbox,
-    CheckboxGroup,
 } from "@chakra-ui/react";
 
 function pacienteA(props) {
@@ -112,7 +95,6 @@ function pacienteA(props) {
                                     <Checkbox value="masculino">Masculino</Checkbox>
                                     <Checkbox value="feminino" >Feminino</Checkbox>
                                 </HStack>
-
                             </Box>
 
                             <Box w="100%">
@@ -176,7 +158,6 @@ function pacienteA(props) {
                                     mt="7"
 
                                     _hover={{ bg: "teal.800" }}
-
                                 >
                                     Cadastrar Paciente
                                 </Button>
