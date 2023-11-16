@@ -2,33 +2,11 @@ import {
     Flex,
     Box,
     Center,
-    FormControl,
     Input,
     FormLabel,
     HStack,
-    RadioGroup,
-    Radio,
-    Button,
-    Tab,
-    Tabs,
-    TabPanel,
-    TabPanels,
-    TabList,
-    Table,
-    Thead,
-    Tbody,
-    Tfoot,
-    Tr,
-    Th,
-    Td,
-    TableCaption,
-    TableContainer,
-    Select,
-    Portal,
-    VStack,
     Checkbox,
     CheckboxGroup,
-    Heading,
     Textarea,
     Text
 } from "@chakra-ui/react";
@@ -49,7 +27,7 @@ function Orcamento(props) {
                         p="6"
                         color="white"
                     >
-                        <img width={"100%"} src={Arcada} />
+                        <img width={"100%"} src={Arcada} alt="Arcada dentaria" />
                     </Flex>
                     <Flex //radiografia
                         w="700px"
