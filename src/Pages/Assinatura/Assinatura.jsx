@@ -17,48 +17,17 @@ import {
 
 function Assinatura() {
     return (
-        <Box w="100%">
-            <Center
-                as="header"
-                h={150}
-                bgGradient="linear(to-l, #10E8CE, #002C36)"
-                color="white"
-                fontWeight="bold"
-                fontSize="4x1"
-                pb="8"
-            >
-                <Flex
-                    aling="center"
-                    justify="center"
-                    bgGradient="linear(to-l, #10E8CE, #002C36)"
-                    h="calc(100vh - 150px)"
-                >
-                    <Center
-                        w="100%"
-                        maxW={840}
-                        bg="#24394A"
-                        top={100}
-                        position="absolute"
-                        borderRadius={5}
-                        p="6"
-                        color="white"
-                    >
-                    </Center>
-                </Flex>
-            </Center>
+        <Box minH="100vh" w="100%" bgGradient="linear(to-l, #10E8CE, #002C36)" p="50px">
             <Box w="100%">
                 <Flex
                     aling="center"
                     justify="center"
-                    bgGradient="linear(to-l, #10E8CE, #002C36)"
-                    h="calc(100vh - 150px)"
                 >
                     <Center
                         w="100%"
                         maxW={840}
                         bg="#24394A"
                         top={100}
-                        position="absolute"
                         borderRadius={5}
                         p="6"
                         color="white"
