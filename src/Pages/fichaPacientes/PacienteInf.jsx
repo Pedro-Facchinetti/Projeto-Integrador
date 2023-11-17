@@ -13,7 +13,7 @@ import {
     Checkbox,
 } from "@chakra-ui/react";
 
-function pacienteA(props) {
+function pacienteInf(props) {
     return (
         <Box h="100vh">
             <Center
