@@ -8,7 +8,7 @@ export default function NavBar() {
             <ul style={{ display: 'flex', listStyle: 'none', padding: 0, margin: 0, justifyContent: 'center', gap: '35px' }}>
                 <CustomLink to={"/anamnese"} isActive={location.pathname === '/anamnese'}>Anamnese</CustomLink>
                 <CustomLink to={"/assinatura"} isActive={location.pathname === '/assinatura'}>Assinatura</CustomLink>
-                <CustomLink to={"/fichaPaciente/paciente_adulto"} isActive={location.pathname === '/fichaPaciente/paciente_adulto'}>Fixa Clínica</CustomLink>
+                <CustomLink to={"/ficha/paciente_adulto"} isActive={location.pathname === '/ficha/paciente_adulto'}>Fixa Clínica</CustomLink>
                 <CustomLink to={"/orcamento"} isActive={location.pathname === '/orcamento'}>Orçamento</CustomLink>
             </ul>
         </nav>

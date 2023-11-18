@@ -1,17 +1,16 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
+import ReactDOM from 'react-dom';
+import App from './App';
 
-import { ChakraProvider } from '@chakra-ui/react'
+import { BrowserRouter } from "react-router-dom"
 
-import ButtonToTop from './Components/ButtomToTop';
-import Anamnese from './Pages/AnamnesePaciente/Anamnese';
+const rootElement = document.getElementById('root');
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
+ReactDOM.createRoot(rootElement).render(
   <React.StrictMode>
-    <ChakraProvider>
-      {Anamnese()}
-    </ChakraProvider>
-    <ButtonToTop />
-  </React.StrictMode>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </React.StrictMode>,
+  rootElement
 );

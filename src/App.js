@@ -17,8 +17,8 @@ function App() {
                 <Routes>
                     <Route path='/anamnese' element={<Anamnesse />} />
                     <Route path='/assinatura' element={<Assinatura />} />
-                    <Route path='/fichaPaciente/paciente_adulto' element={<PacienteA />} />
-                    <Route path='/fichaPaciente/paciente_infantil' element={<PacienteInf />} />
+                    <Route path='/ficha/paciente_adulto' element={<PacienteA />} />
+                    <Route path='/ficha/paciente_infantil' element={<PacienteInf />} />
                     <Route path='/orcamento' element={<Orcamento />} />
                 </Routes>
             </div>
