@@ -11,6 +11,7 @@ import {
 } from "@chakra-ui/react";
 
 import NavBar from "../../NavBar";
+import NavFicha from "../../Components/NavFicha/NavFicha";
 
 function pacienteA(props) {
     return (
@@ -26,6 +27,7 @@ function pacienteA(props) {
                 justify="center"
             >
                 <Flex mb={35}> <NavBar /> </Flex>
+                <Flex w={"500px"} pb={"30px"} > <NavFicha /> </Flex>
 
                 <Flex>
                     <Center
