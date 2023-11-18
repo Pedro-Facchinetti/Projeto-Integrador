@@ -7,9 +7,6 @@ import {
     FormLabel,
     HStack,
     Button,
-    Tab,
-    Tabs,
-    TabList,
     Checkbox,
 } from "@chakra-ui/react";
 
