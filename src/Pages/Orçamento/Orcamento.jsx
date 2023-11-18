@@ -8,16 +8,20 @@ import {
     Checkbox,
     CheckboxGroup,
     Textarea,
-    Text
+    Text,
+    Button
 } from "@chakra-ui/react";
 
 import Arcada from "../../Assets/mandibula.svg"
 import CustomVStack from "../../Components/CustomChakraUI/CustomVStack";
 
+import NavBar from "../../NavBar";
+
 function Orcamento(props) {
     return (
-        <Box alignContent={"center"} minH="100vh" bgGradient="linear(to-l, #10E8CE, #002C36)" flexDir={"column"} p={"100px"} >
-            <Center color="white" fontWeight="bold" fontSize="4x1" flexDirection={"column"} >
+        <Box alignContent={"center"} minH="100vh" bgGradient="linear(to-l, #10E8CE, #002C36)" flexDir={"column"} p={"50px"} >
+            <Center color="white" fontSize="4x1" flexDirection={"column"} >
+                <Flex mb={35}> <NavBar /> </Flex>
                 <Flex aling="center" justify="center" gap="25px" >
                     <Flex //imagem mandibula
                         w="425px"
@@ -267,6 +271,20 @@ function Orcamento(props) {
                         <Checkbox w="10%" value="dinheiro" >Dinheiro</Checkbox>
                         <Checkbox w="10%" value="pix" >Pix</Checkbox>
                     </CustomVStack>
+                    <Button
+                        w={250}
+                        p="5"
+                        type="submit"
+                        bg="teal.400"
+                        color="black"
+                        fontWeight="bold"
+                        fontSize="xl"
+                        mt="7"
+
+                        _hover={{ bg: "teal.800" }}
+                    >
+                        Registrar informações
+                    </Button>
                 </Flex>
             </Center>
         </Box >

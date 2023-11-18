@@ -10,9 +10,12 @@ import {
     Heading,
     Checkbox,
     Text,
-    Divider
+    Divider,
+    Button,
 } from "@chakra-ui/react";
+
 import CustomVStack from "../../Components/CustomChakraUI/CustomVStack";
+import NavBar from '../../NavBar'
 
 function Anamnese(props) {
     return (
@@ -23,10 +26,11 @@ function Anamnese(props) {
                 justify="center"
 
                 color="white"
-                //fontWeight="bold"
                 fontSize="4xl"
                 w="100%"
             >
+                <Flex mb={35}> <NavBar /> </Flex>
+
                 <Center //Cadastro do paciente
                     w="100%"
                     maxW={1000}
@@ -289,6 +293,19 @@ function Anamnese(props) {
                             <Input id="medicamento" type="text" />
                         </CustomVStack>
                     </FormControl>
+                    <Button
+                        w={250}
+                        p="5"
+                        type="submit"
+                        bg="teal.400"
+                        color="black"
+                        fontWeight="bold"
+                        fontSize="xl"
+                        mt="7"
+                        _hover={{ bg: "teal.800" }}
+                    >
+                        Registrar informações
+                    </Button>
                 </Center>
             </Flex>
         </Box>

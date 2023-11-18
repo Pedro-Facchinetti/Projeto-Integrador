@@ -15,14 +15,18 @@ import {
     TableContainer
 } from "@chakra-ui/react";
 
+import NavBar from "../../NavBar";
+
 function Assinatura() {
     return (
-        <Box minH="100vh" w="100%" bgGradient="linear(to-l, #10E8CE, #002C36)" p="50px">
+        <Box minH="100vh" bgGradient="linear(to-l, #10E8CE, #002C36)" p="50px">
             <Box w="100%">
                 <Flex
-                    aling="center"
+                    align="center"
                     justify="center"
+                    flexDir={"column"}
                 >
+                    <Flex mb={35}> <NavBar /> </Flex>
                     <Center
                         w="100%"
                         maxW={840}
