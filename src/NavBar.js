@@ -6,6 +6,7 @@ export default function NavBar() {
     return (
         <nav className="nav" style={{ background: '#24394A', borderRadius: '10px', padding: '20px', overflow: 'hidden', width: '100%' }}>
             <ul style={{ display: 'flex', listStyle: 'none', padding: 0, margin: 0, justifyContent: 'center', gap: '35px' }}>
+                <CustomLink to={"/"} isActive={location.pathname === '/'}>Login</CustomLink>
                 <CustomLink to={"/anamnese"} isActive={location.pathname === '/anamnese'}>Anamnese</CustomLink>
                 <CustomLink to={"/assinatura"} isActive={location.pathname === '/assinatura'}>Assinatura</CustomLink>
                 <CustomLink to={"/ficha/paciente_adulto"} isActive={location.pathname === '/ficha/paciente_adulto'}>Fixa Clínica</CustomLink>
