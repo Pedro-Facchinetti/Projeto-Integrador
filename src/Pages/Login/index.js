@@ -6,7 +6,7 @@ import Button from '../../Components/Button';
 import cn from 'classnames';
 import backgroundImage from '../../Assets/background.svg';
 import { useUser } from '../../Contexts/UserContext';
-import axios from 'axios';
+import {fakeLoginApi} from '../../Utils/api'
 
 function Login(props) {
   const [activeTab, setActiveTab] = useState('admin');
@@ -14,26 +14,38 @@ function Login(props) {
   const [password, setPassword] = useState('');
   const { loginUser } = useUser();
 
+  // const handleLogin = async () => {
+  //   try {
+  //     const response = await axios.post('http://localhost:8080/api/login', {
+  //       username: username,
+  //       password: password
+  //     });
+
+  //     if (response.data && response.data.role) {
+  //       loginUser(response.data.role, response.data.username, response.data.token);
+  //     } else {
+  //       alert('Resposta inesperada da API.');
+  //     }
+  //   } catch (error) {
+  //     if (error.response && error.response.data && error.response.data.message) {
+  //       alert(error.response.data.message);
+  //     } else {
+  //       alert('Erro ao fazer login.');
+  //     }
+  //   }
+  // };
+
   const handleLogin = async () => {
     try {
-      const response = await axios.post('http://localhost:8080/api/login', {
-        username: username,
-        password: password
-      });
-
-      if (response.data && response.data.role) {
-        loginUser(response.data.role, response.data.username, response.data.token);
-      } else {
-        alert('Resposta inesperada da API.');
-      }
+      // Chamada para a função fakeLoginApi
+      const userType = await fakeLoginApi(username, password, activeTab);
+  
+      // Chamando loginUser com os dados mockados
+      loginUser(userType, username, 'fakeToken');
     } catch (error) {
-      if (error.response && error.response.data && error.response.data.message) {
-        alert(error.response.data.message);
-      } else {
-        alert('Erro ao fazer login.');
-      }
+      alert(error); // Mostrando a mensagem de erro da função mock
     }
-  };
+  };  
 
   return (
     <div

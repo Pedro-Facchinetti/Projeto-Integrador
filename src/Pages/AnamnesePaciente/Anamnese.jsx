@@ -16,8 +16,57 @@ import {
 
 import CustomVStack from "../../Components/CustomChakraUI/CustomVStack";
 import NavBar from '../../NavBar'
+import { useState } from "react";
+import {createAnamnese} from'./AnamneseService'
 
 function Anamnese(props) {
+
+    const [motivoConsulta, setMotivoConsulta] = useState('');
+    const [peso, setPeso] = useState('');
+    const [altura, setAltura] = useState('');
+    const [tipoSanguineo, setTipoSanguineo] = useState('');
+    const [anemia, setAnemia] = useState(false);
+    const [cardiopatias, setCardiopatias] = useState(false);
+    const [hemorragia, setHemorragia] = useState(false);
+    const [hemofilia, setHemofilia] = useState(false);
+    const [aids, setAids] = useState(false);
+    const [gastrite, setGastrite] = useState(false);
+    const [problemasGestacao, setProblemasGestacao] = useState('');
+    const [convulsao, setConvulsao] = useState(false);
+    const [depressao, setDepressao] = useState(false);
+    const [diabetes, setDiabetes] = useState(false);
+    const [hepatite, setHepatite] = useState(false);
+    const [herpes, setHerpes] = useState(false);
+    const [desmaiosTonturas, setDesmaiosTonturas] = useState(false);
+    const [parto, setParto] = useState('');
+    const [tosseFrequente, setTosseFrequente] = useState(false);
+
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+        const anamneseData = {
+            motivoConsulta,
+            peso: parseInt(peso),
+            altura: parseFloat(altura),
+            tipoSanguineo,
+            anemia: anemia ? 'SIM' : 'NAO',
+            cardiopatias: cardiopatias ? 'SIM' : 'NAO',
+            hemorragia: hemorragia ? 'SIM' : 'NAO',
+            hemofilia: hemofilia ? 'SIM' : 'NAO',
+            aids: aids ? 'SIM' : 'NAO',
+            gastrite: gastrite ? 'SIM' : 'NAO',
+            problemasGestacao,
+            convulsao: convulsao ? 'SIM' : 'NAO',
+            depressao: depressao ? 'SIM' : 'NAO',
+            diabetes: diabetes ? 'SIM' : 'NAO',
+            hepatite: hepatite ? 'SIM' : 'NAO',
+            herpes: herpes ? 'SIM' : 'NAO',
+            desmaiosTonturas: desmaiosTonturas ? 'SIM' : 'NAO',
+            parto, // Aqui precisa ser tratado conforme o enum TipoParto
+            tosseFrequente: tosseFrequente ? 'SIM' : 'NAO'
+        };
+        await createAnamnese(anamneseData);
+    };
+
     return (
         <Box minH="100vh" bgGradient="linear(to-l, #10E8CE, #002C36)" p={50} >
             <Flex
@@ -43,25 +92,29 @@ function Anamnese(props) {
                         <HStack spacing="4">
                             <Box w="100%" >
                                 <FormLabel htmlFor="nome">Motivo da consulta:</FormLabel>
-                                <Textarea id="nome" rows={5} required border="1px solid #057765" borderRadius="md" p="4" />
-                            </Box>
+                                <Textarea id="motivoConsulta" rows={5} required border="1px solid #057765" borderRadius="md" p="4"
+                                              value={motivoConsulta} onChange={e => setMotivoConsulta(e.target.value)} />                            </Box>
                         </HStack>
                         <HStack w="100%">
                             <Box w="25%">
                                 <FormLabel htmlFor="racionalidade">Racionalidade:</FormLabel>
-                                <Input id="racionalidade" type="text" required border="1px solid #057765" borderRadius="md" p="4" />
+                                <Input id="racionalidade" type="text" required border="1px solid #057765" borderRadius="md" p="4"
+                                /> 
                             </Box>
                             <Box w="25%">
                                 <FormLabel htmlFor="altura">Altura:</FormLabel>
-                                <Input id="altura" type="number" required border="1px solid #057765" borderRadius="md" p="4" />
+                                <Input id="altura" type="number" required border="1px solid #057765" borderRadius="md" p="4"
+                                            value={altura} onChange={e => setAltura(e.target.value)} />
                             </Box>
                             <Box w="25%">
                                 <FormLabel htmlFor="peso">Peso:</FormLabel>
-                                <Input id="peso" type="number" required border="1px solid #057765" borderRadius="md" p="4" />
+                                <Input id="peso" type="number" required border="1px solid #057765" borderRadius="md" p="4" 
+                                value={peso} onChange={e => setPeso(e.target.value)}/>
                             </Box>
                             <Box w="25%">
                                 <FormLabel htmlFor="tipo_sanguineo">Tipo sanguíneo:</FormLabel>
-                                <Input id="tipo_sanguineo" type="text" required border="1px solid #057765" borderRadius="md" p="4" />
+                                <Input id="tipo_sanguineo" type="text" required border="1px solid #057765" borderRadius="md" p="4"
+                                value={tipoSanguineo} onChange={e => setTipoSanguineo(e.target.value)}/>
                             </Box>
                         </HStack>
                     </FormControl>
@@ -80,53 +133,53 @@ function Anamnese(props) {
                         <Heading>Antecedentes pessoais do cliente</Heading>
                         <HStack spacing="4">
                             <Box w="100%" >
-                                <Checkbox w="20%" value="Anemia" >Anemia</Checkbox>
-                                <Checkbox w="20%" value="Depresao" >Depressão</Checkbox>
-                                <Checkbox w="20%" value="Tosse" >Tosse</Checkbox>
-                                <Checkbox w="20%" value="Pressao_alta" >Pressão alta</Checkbox>
-                                <Checkbox w="20%" value="Sensi_alergica" >Sensibilidade alérgica</Checkbox>
+                            <Checkbox w="20%" isChecked={anemia} onChange={e => setAnemia(e.target.checked)}>Anemia</Checkbox>
+                                <Checkbox w="20%" isChecked={depressao} onChange={e => setDepressao(e.target.checked)}>Depressão</Checkbox>
+                                <Checkbox w="20%" isChecked={tosseFrequente} onChange={e => setTosseFrequente(e.target.checked)}>Tosse</Checkbox>
+                                <Checkbox w="20%" isChecked={hemorragia} onChange={e => setHemorragia(e.target.checked)}>Pressão alta</Checkbox>
+                                <Checkbox w="20%" isChecked={hepatite} onChange={e => setHepatite(e.target.checked)}>Sensibilidade alérgica</Checkbox>
                             </Box>
                         </HStack>
                         <HStack spacing="4">
                             <Box w="100%" >
-                                <Checkbox w="20%" value="Cardiopatia" >Cardiopatia</Checkbox>
-                                <Checkbox w="20%" value="Convulsao" >Convulsão</Checkbox>
-                                <Checkbox w="20%" value="Asma" >Asma</Checkbox>
-                                <Checkbox w="20%" value="Tensao" >Tensão</Checkbox>
-                                <Checkbox w="20%" value="Anestesico" >Anestésico</Checkbox>
+                            <Checkbox w="20%" isChecked={cardiopatias} onChange={e => setCardiopatias(e.target.checked)}>Cardiopatia</Checkbox>
+                                <Checkbox w="20%" isChecked={convulsao} onChange={e => setConvulsao(e.target.checked)}>Convulsão</Checkbox>
+                                <Checkbox w="20%" isChecked={diabetes} onChange={e => setDiabetes(e.target.checked)}>Asma</Checkbox>
+                                <Checkbox w="20%" isChecked={desmaiosTonturas} onChange={e => setDesmaiosTonturas(e.target.checked)}>Tensão</Checkbox>
+                                <Checkbox w="20%" isChecked={gastrite} onChange={e => setGastrite(e.target.checked)}>Anestésico</Checkbox>
                             </Box>
                         </HStack>
                         <HStack spacing="4">
                             <Box w="100%" >
-                                <Checkbox w="20%" value="Hemorragia" >Hemorragia</Checkbox>
-                                <Checkbox w="20%" value="Diabete" >Diabete</Checkbox>
-                                <Checkbox w="20%" value="Bronquite" >Bronquite</Checkbox>
-                                <Checkbox w="20%" value="Artrite" >Artrite</Checkbox>
-                                <Checkbox w="20%" value="Abalgesico" >Analgésico</Checkbox>
+                                <Checkbox w="20%" isChecked={hemorragia} onChange={e => setHemorragia(e.target.checked)}>Hemorragia</Checkbox>
+                                <Checkbox w="20%" isChecked={diabetes} onChange={e => setDiabetes(e.target.value)} >Diabete</Checkbox>
+                                <Checkbox w="20%" isChecked={null} >Bronquite</Checkbox>
+                                <Checkbox w="20%" isChecked={null} >Artrite</Checkbox>
+                                <Checkbox w="20%" isChecked={null} >Analgésico</Checkbox>
                             </Box>
                         </HStack>
                         <HStack spacing="4">
                             <Box w="100%" >
-                                <Checkbox w="20%" value="Hemofilia" >Hemofilia</Checkbox>
-                                <Checkbox w="20%" value="Herpes" >Herpes</Checkbox>
-                                <Checkbox w="20%" value="Rinite" >Rinite</Checkbox>
-                                <Checkbox w="20%" value="Reumatismo" >Reumatismo</Checkbox>
-                                <Checkbox w="20%" value="Anti_inflamatorio" >Anti-Inflamatório</Checkbox>
+                                <Checkbox w="20%" isChecked={hemofilia} onChange={e => setHemofilia(e.target.value)} >Hemofilia</Checkbox>
+                                <Checkbox w="20%" isChecked={herpes} onChange={e => setHerpes(e.target.value)} >Herpes</Checkbox>
+                                <Checkbox w="20%" isChecked={null} >Rinite</Checkbox>
+                                <Checkbox w="20%" isChecked={null} >Reumatismo</Checkbox>
+                                <Checkbox w="20%" isChecked={null} >Anti-Inflamatório</Checkbox>
                             </Box>
                         </HStack>
                         <HStack spacing="4">
                             <Box w="100%" >
-                                <Checkbox w="20%" value="Aids" >Aids</Checkbox>
-                                <Checkbox w="20%" value="Hepatite" >Hepatite</Checkbox>
-                                <Checkbox w="20%" value="Sinusite" >Sinusite</Checkbox>
-                                <Checkbox w="20%" value="Cirrose_epatica" >Cirrose epática</Checkbox>
-                                <Checkbox w="20%" value="Anemia" >Antibiótico</Checkbox>
+                                <Checkbox w="20%" isChecked={aids} onChange={e => setAids(e.target.value)} >Aids</Checkbox>
+                                <Checkbox w="20%" isChecked={hepatite} onChange={e => setHepatite} >Hepatite</Checkbox>
+                                <Checkbox w="20%" isChecked={null} >Sinusite</Checkbox>
+                                <Checkbox w="20%" isChecked={null} >Cirrose epática</Checkbox>
+                                <Checkbox w="20%" isChecked={null} >Antibiótico</Checkbox>
                             </Box>
                         </HStack>
                         <HStack spacing="4">
                             <Box w="100%" >
-                                <Checkbox w="20%" value="Gastrite" >Gastrite</Checkbox>
-                                <Checkbox w="20%" value="Desmaios" >Desmaios</Checkbox>
+                                <Checkbox w="20%" isChecked={gastrite} onChange={e => setGastrite(e.target.value)} >Gastrite</Checkbox>
+                                <Checkbox w="20%" isChecked={desmaiosTonturas} onChange={e => setDesmaiosTonturas(e.target.value)} >Desmaios</Checkbox>
                                 <Checkbox w="20%" value="Tuberculose" >Tuberculose</Checkbox>
                                 <Checkbox w="20%" value="Meningite" >Meningite</Checkbox>
                                 <Checkbox w="20%" value="Ulcera" >Ulcera</Checkbox>
@@ -303,6 +356,7 @@ function Anamnese(props) {
                         fontSize="xl"
                         mt="7"
                         _hover={{ bg: "teal.800" }}
+                        onClick={handleSubmit}
                     >
                         Registrar informações
                     </Button>
