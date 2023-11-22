@@ -4,11 +4,12 @@ const API_URL = 'http://localhost:8080/anamneses'; // ajuste conforme necessári
 
 export const createAnamnese = async (anamneseData) => {
     try {
-        //const response = await axios.post(API_URL, anamneseData);
-        return console.log(anamneseData);
+        const response = await axios.post(API_URL, anamneseData);
+        return response;
     } catch (error) {
         // Trate o erro conforme necessário
         console.error('Erro ao criar anamnese', error);
+        console.log(anamneseData)
     }
 };
 

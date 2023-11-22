@@ -4,8 +4,9 @@ const API_URL = 'http://localhost:8080/pacienteA'; // ajuste conforme necessári
 
 export const createPacienteA = async (pacienteAData) => {
     try {
-        //const response = await axios.post(API_URL, pacienteAData);
-        return console.log(pacienteAData);
+        const response = await axios.post(API_URL, pacienteAData);
+        console.log(pacienteAData)
+        return response;
     } catch (error) {
         // Trate o erro conforme necessário
         console.error('Erro ao criar ficha de paciente adulto', error);

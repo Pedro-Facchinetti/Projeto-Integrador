@@ -4,8 +4,9 @@ const API_URL = 'http://localhost:8080/pacienteInf'; // ajuste conforme necessá
 
 export const createPacienteInf = async (pacienteInfData) => {
     try {
-        //const response = await axios.post(API_URL, pacienteInfData);
-        return console.log(pacienteInfData);
+        const response = await axios.post(API_URL, pacienteInfData);
+        console.log(pacienteInfData)
+        return response;
     } catch (error) {
         // Trate o erro conforme necessário
         console.error('Erro ao criar ficha de paciente infantil', error);

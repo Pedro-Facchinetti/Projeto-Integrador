@@ -18,37 +18,38 @@ import { createPacienteA } from "./PacienteAService";
 
 function PacienteA(props) {
 
-    const [nomePacienteA, setNomePacienteA] = useState('');
-    const [dataNasimentoA, setDataNascimentoA] = useState('');
-    const [idadePacienteA, setIdadePacienteA] = useState('');
-    const [sexoPacienteA, setSexoPacienteA] = useState('');
-    const [telefonePacienteA, setTelefonePacienteA] = useState('');
-    const [celularPacienteA, setCelularPacienteA] = useState('');
-    const [enderecoPacienteA, setEnderecoPacienteA] =  useState('');
-    const [cepPacienteA, setCepPacienteA] = useState('');
-    const [ufPacienteA, setUfPacienteA] = useState('');
-    const [cidadePacienteA, setCidadePacienteA] = useState('');
-    const [emailPacienteA, setEmailPacienteA] = useState('');
-    const [dataCadastroPacienteA, setDataCadastroPacienteA] = useState('');
+    const [nomePaciente, setNomePaciente] = useState('');
+    const [dataNasimento, setDataNascimentoA] = useState('');
+    const [idadePaciente, setIdadePaciente] = useState('');
+    const [sexoPaciente, setSexoPaciente] = useState('');
+    const [telefonePaciente, setTelefonePaciente] = useState('');
+    const [celularPaciente, setCelularPaciente] = useState('');
+    const [enderecoPaciente, setEnderecoPaciente] =  useState('');
+    const [cepPaciente, setCepPaciente] = useState('');
+    const [ufPaciente, setUfPaciente] = useState('');
+    const [cidadePaciente, setCidadePaciente] = useState('');
+    const [emailPaciente, setEmailPaciente] = useState('');
+    const [dataCadastroPaciente, setDataCadastroPaciente] = useState('');
 
     const handleSubmit = async (event) => {
         event.preventDefault();
         const pacienteAdultoData = {
-            nomePacienteA,
-            dataNasimentoA,
-            idadePacienteA: parseInt(idadePacienteA),
-            sexoPacienteA,
-            telefonePacienteA,
-            celularPacienteA,
-            enderecoPacienteA,
-            cepPacienteA,
-            ufPacienteA,
-            cidadePacienteA,
-            emailPacienteA  ,
-            dataCadastroPacienteA,
+            nome: nomePaciente,
+            dataNascimento: dataNasimento,
+            idade: parseInt(idadePaciente),
+            sexo: sexoPaciente,
+            telefone: telefonePaciente,
+            celular: celularPaciente,
+            endereco: enderecoPaciente,
+            cep: cepPaciente,
+            uf: ufPaciente,
+            cidade: cidadePaciente,
+            email: emailPaciente,
+            dataCadastro: dataCadastroPaciente,
         }
         await createPacienteA(pacienteAdultoData);
     };
+    
 
     return (
         <Box minH="100vh" bgGradient="linear(to-l, #10E8CE, #002C36)">
@@ -61,17 +62,17 @@ function PacienteA(props) {
                             <HStack spacing="4">
                                 <Box w="100%">
                                     <FormLabel htmlFor="nome">Nome:</FormLabel>
-                                    <Input value={nomePacienteA} onChange={e => setNomePacienteA(e.target.value)}
+                                    <Input value={nomePaciente} onChange={e => setNomePaciente(e.target.value)}
                                         id="nome" type="name" />
                                 </Box>
                                 <Box w="100%">
                                     <FormLabel htmlFor="date">Data de nascimento:</FormLabel>
-                                    <Input value={dataNasimentoA} onChange={e => setDataNascimentoA(e.target.value)}
+                                    <Input value={dataNasimento} onChange={e => setDataNascimentoA(e.target.value)}
                                         id="date" type="date" />
                                 </Box>
                                 <Box w="100%">
                                     <FormLabel htmlFor="age">Idade:</FormLabel>
-                                    <Input value={idadePacienteA} onChange={e => setIdadePacienteA(e.target.value)}
+                                    <Input value={idadePaciente} onChange={e => setIdadePaciente(e.target.value)}
                                         id="age" type="age" />
                                 </Box>
                             </HStack>
@@ -79,54 +80,54 @@ function PacienteA(props) {
                                 <Box w="100%">
                                     <FormLabel htmlFor="sex">Sexo:</FormLabel>
                                     <HStack square="24px">
-                                        <Checkbox isChecked={sexoPacienteA === 'masculino'} onChange={() => setSexoPacienteA('masculino')}>Masculino</Checkbox>
-                                        <Checkbox isChecked={sexoPacienteA === 'feminino'} onChange={() => setSexoPacienteA('feminino')}>Feminino</Checkbox>
+                                        <Checkbox isChecked={sexoPaciente === 'masculino'} onChange={() => setSexoPaciente('masculino')}>Masculino</Checkbox>
+                                        <Checkbox isChecked={sexoPaciente === 'feminino'} onChange={() => setSexoPaciente('feminino')}>Feminino</Checkbox>
                                     </HStack>
                                 </Box>
                                 <Box w="100%">
                                     <FormLabel htmlFor="number">Telefone:</FormLabel>
-                                    <Input value={telefonePacienteA} onChange={e => setTelefonePacienteA(e.target.value)}
+                                    <Input value={telefonePaciente} onChange={e => setTelefonePaciente(e.target.value)}
                                     id="number" type="number" />
                                 </Box>
                                 <Box w="100%">
                                     <FormLabel htmlFor="number">Celular:</FormLabel>
-                                    <Input value={celularPacienteA} onChange={e => setCelularPacienteA(e.target.value)}
+                                    <Input value={celularPaciente} onChange={e => setCelularPaciente(e.target.value)}
                                     id="number" type="number" />
                                 </Box>
                             </HStack>
                             <HStack spacing="4">
                                 <Box w="67%">
                                     <FormLabel htmlFor="endereco">Endereço Residencial:</FormLabel>
-                                    <Input value={enderecoPacienteA} onChange={e => setEnderecoPacienteA(e.target.value)}
+                                    <Input value={enderecoPaciente} onChange={e => setEnderecoPaciente(e.target.value)}
                                     id="endereco" type="endereco" />
                                 </Box>
                                 <Box w="33%">
                                     <FormLabel htmlFor="cep">CEP:</FormLabel>
-                                    <Input value={cepPacienteA} onChange={e => setCepPacienteA(e.target.value)}
+                                    <Input value={cepPaciente} onChange={e => setCepPaciente(e.target.value)}
                                     id="cep" type="cep" />
                                 </Box>
                             </HStack>
                             <HStack spacing="4">
                                 <Box w="100%">
                                     <FormLabel htmlFor="uf">UF:</FormLabel>
-                                    <Input value={ufPacienteA} onChange={e => setUfPacienteA(e.target.value)}
+                                    <Input value={ufPaciente} onChange={e => setUfPaciente(e.target.value)}
                                     id="uf" type="uf" />
                                 </Box>
                                 <Box w="100%">
                                     <FormLabel htmlFor="cidade">Cidade:</FormLabel>
-                                    <Input value={cidadePacienteA} onChange={e => setCidadePacienteA(e.target.value)}
+                                    <Input value={cidadePaciente} onChange={e => setCidadePaciente(e.target.value)}
                                     id="cidade" type="cidade" />
                                 </Box>
                                 <Box w="100%">
                                     <FormLabel htmlFor="email">E-mail:</FormLabel>
-                                    <Input value={emailPacienteA} onChange={e => setEmailPacienteA(e.target.value)}
+                                    <Input value={emailPaciente} onChange={e => setEmailPaciente(e.target.value)}
                                     id="email" type="email" />
                                 </Box>
                             </HStack>
                             <HStack spacing="4">
                                 <Box w="33%">
                                     <FormLabel htmlFor="date">Data de Hoje:</FormLabel>
-                                    <Input value={dataCadastroPacienteA} onChange={e => setDataCadastroPacienteA(e.target.value)}
+                                    <Input value={dataCadastroPaciente} onChange={e => setDataCadastroPaciente(e.target.value)}
                                     id="date" type="date" />
                                 </Box>
                                 <Box
